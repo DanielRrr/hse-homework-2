@@ -40,6 +40,7 @@ instance Num Expr where
 
 instance Fractional Expr where
   x / y = Op (Div x y)
+  fromRational rat = Val (fromRational rat)
 
 -- Using do-notation for State, define the evaluation function:
 eval :: Expr -> State [Prim Double] Double
